@@ -1,0 +1,24 @@
+{% load static %}
+<nav class="fh5co-nav" role="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-xs-2">
+                <a href="{% url 'shop:product_list' %}"><img src="{% static 'images/logo.jpg' %}" width="110"  alt=""></a>
+            </div>
+            <div class="col-md-6 col-xs-6 text-center menu-1">
+                <ul>
+                    {% for category in categories %}
+                    <li class="has-dropdown active">
+                        <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
+                <ul>
+                    <li class="shopping-cart"><a href="#" class="cart"><span><small>0</small><i class="icon-shopping-cart"></i></span></a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+</nav>

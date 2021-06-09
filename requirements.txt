@@ -1,0 +1,11 @@
+astroid
+Django
+isort
+lazy-object-proxy
+mccabe
+Pillow
+pylint
+pytz
+six
+typed-ast
+wrapt

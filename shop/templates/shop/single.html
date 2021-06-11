@@ -84,20 +84,20 @@
 				</div>
 				<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
 					<ul>
-					<li class="shopping-cart"><a href="#" class="cart"><span><small>0</small><i class="icon-shopping-cart"></i></span></a></li>
-					<li class="nav-item">
-						{% with totail_items=cart|length %}
-						{% if cart|length > 0 %}
-							<a class="nav-link" href="{% url 'cart:cart_detail' %}">
-								Корзина <span class="badge badge-secondary">{{ totail_items }}</span>
-							</a>
-							{% else %}
-							<a class="nav-link" href="{% url 'cart:cart_detail' %}">
-								Корзина пуста
-							</a>
-						{% endif %}
-					{% endwith %}
-					</li>
+						<li class="shopping-cart"><a href="#" class="cart"><span><i class="icon-shopping-cart"></i></span></a></li>
+						<li class="nav-item">
+							{% with totail_items=cart|length %}
+							{% if cart|length > 0 %}
+								<a class="nav-link" href="{% url 'cart:cart_detail' %}">
+									Корзина <span class="badge badge-secondary">{{ totail_items }}</span>
+								</a>
+								{% else %}
+								<a class="nav-link" href="{% url 'cart:cart_detail' %}">
+									Корзина пуста
+								</a>
+							{% endif %}
+						{% endwith %}
+							</li>
 					</ul>
 				</div>
 			</div>

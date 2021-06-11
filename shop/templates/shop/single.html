@@ -112,8 +112,8 @@
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>Product Details</h1>
-							<h2>Free html5 templates by <a href="https://themewagon.com/theme_tag/free/" target="_blank">Themewagon</a></h2>
+							<h1>BARO</h1>
+							<h2>{{ product.name }}</h2>
 						</div>
 					</div>
 				</div>
@@ -138,7 +138,6 @@
 					</div>
 					<div class="row animate-box">
 						<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-							<h2>Hauteville Rocking Chair</h2>
 							<p>	
 								<form action="{% url "cart:cart_add" product.id %}" method="post">
 									{% csrf_token %}

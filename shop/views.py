@@ -4,19 +4,8 @@ from .models import Category, Product, PhotoProduct
 from carousel.models import Carousel
 from cart.forms import CartAddProductForm
 
-from django.views.generic import (
-    ListView,
-    DetailView
-)
-'''
-class ProductListView(ListView):
-    template_name = 'shop/product/list.html'
-    queryset = Product.objects.all()
-    def get_context_data(self, **kwargs):
-        context = super(ProductListView, self).get_context_data(**kwargs)
-        context['category_list'] = Category.objects.all()
-        return context
-'''
+
+
 
 def index(request):
     categories = Category.objects.all()
@@ -48,7 +37,6 @@ def product_list(request, category_slug=None):
         'products': products,
         'carousel_list' : carousel_list 
     }
-    # return render(request, 'shop/product/list.html', context)
     return render(request, 'shop/list.html', context)
 
 

@@ -1,80 +1,9 @@
-<!DOCTYPE HTML>
+{% extends 'shop/includs/base.html' %}
 {% load static %}
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>BARO</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet"> 
-	
-
-	<link rel="stylesheet" href="{% static 'css/animate.css' %}">  
-
-	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
-
-	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> 
-
-
-	<link rel="stylesheet" href="{% static 'css/flexslider.css' %}"> 
-
-
-	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}"> 
-	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}"> 
-
-
-	<link rel="stylesheet" href="{% static 'css/style.css' %}"> 
-
-
-	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script> 
-
-
-	</head>
-	<body>
-		
-	<div class="fh5co-loader"></div>
-	
-	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 col-xs-2">
-					<a href="{% url 'shop:product_list' %}"><img src="{% static 'images/logo.jpg' %}" width="110"  alt=""></a>
-				</div>
-				<div class="col-md-6 col-xs-6 text-center menu-1">
-					<ul>
-						{% for category in categories %}
-						<li class="has-dropdown active">
-							<a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
-						{% endfor %}
-					</ul>
-				</div>
-				<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
-					<ul>
-						<li class="shopping-cart"><a href="#" class="cart"><span><i class="icon-shopping-cart"></i></span></a></li>
-						<li class="nav-item">
-							{% with totail_items=cart|length %}
-							{% if cart|length > 0 %}
-								<a class="nav-link" href="{% url 'cart:cart_detail' %}">
-								  Корзина <span class="badge badge-secondary">{{ totail_items }}</span>
-								</a>
-								{% else %}
-								<a class="nav-link" href="{% url 'cart:cart_detail' %}">
-								  Корзина пуста
-								</a>
-							{% endif %}
-						{% endwith %}
-						  </li>
-					</ul>
-				</div>
-			</div>
+{% block content %}
 			
-		</div>
-	</nav>
-	
 	<aside id="fh5co-hero" class="js-fullheight">
 		{% for cl in carousel_list %} 
 		<div class="flexslider js-fullheight">
@@ -125,69 +54,6 @@
 				</div>
 			{% endfor %}           
 	</div>
-
-
-		<div class="flexslider js-fullheight">
-			<ul class="slides">
-		   	<li style="background-image: url(images/img_bg_1.jpg);">
-		   		<div class="overlay-gradient"></div>
-		   		<div class="container">
-		   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
-		   				<div class="slider-text-inner">
-		   					<div class="desc">
-		   						<span class="price">$800</span>
-		   						<h2>Alato Cabinet</h2>
-		   						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-			   					<p><a href="single.html" class="btn btn-primary btn-outline btn-lg">Purchase Now</a></p>
-		   					</div>
-		   				</div>
-		   			</div>
-		   		</div>
-		   	</li>
-		   	<li style="background-image: url(images/img_bg_2.jpg);">
-		   		<div class="container">
-		   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
-		   				<div class="slider-text-inner">
-		   					<div class="desc">
-		   						<span class="price">$530</span>
-		   						<h2>The Haluz Rocking Chair</h2>
-		   						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-			   					<p><a href="single.html" class="btn btn-primary btn-outline btn-lg">Purchase Now</a></p>
-		   					</div>
-		   				</div>
-		   			</div>
-		   		</div>
-		   	</li>
-		   	<li style="background-image: url(images/img_bg_3.jpg);">
-		   		<div class="container">
-		   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
-		   				<div class="slider-text-inner">
-		   					<div class="desc">
-		   						<span class="price">$750</span>
-		   						<h2>Alato Cabinet</h2>
-		   						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-			   					<p><a href="single.html" class="btn btn-primary btn-outline btn-lg">Purchase Now</a></p>
-		   					</div>
-		   				</div>
-		   			</div>
-		   		</div>
-		   	</li>
-		   	<li style="background-image: url(images/img_bg_4.jpg);">
-		   		<div class="container">
-		   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
-		   				<div class="slider-text-inner">
-		   					<div class="desc">
-		   						<span class="price">$540</span>
-		   						<h2>The WW Chair</h2>
-		   						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-			   					<p><a href="single.html" class="btn btn-primary btn-outline btn-lg">Purchase Now</a></p>
-		   					</div>
-		   				</div>
-		   			</div>
-		   		</div>
-		   	</li>
-		  	</ul>
-	  	</div>
 	</aside>
 
 	<div id="fh5co-testimonial" class="fh5co-bg-section">
@@ -276,77 +142,6 @@
 			</div>
 		</div>
 	</div>
-
-
-	<footer id="fh5co-footer" role="contentinfo">
-		<div class="container">
-			<div class="row row-pb-md">
-				<div class="col-md-4 fh5co-widget">
-					<h3>BARO</h3>
-					<p>ИП Солопова Ирина Александровна</p>
-					<p>ИНН — 583510507694, ОГРНИП — 320583500027172</p> 
-				</div>
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-					<ul class="fh5co-footer-links">
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-					<ul class="fh5co-footer-links">
-						<li><a href="https://www.wildberries.ru/brands/baro">Wildberries</a></li>
-						<li><a href="https://www.instagram.com/baro_russia/">Instagram</a></li>
-						<li><a href="https://vk.com/baro">Vk</a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-					<ul class="fh5co-footer-links">
-						{% for category in categories %}
-						<li><a href="{{ category.get_absolute_url }}"> {{ category }}</a></li>
-						{% endfor %}
-					</ul>
-				</div>
-			</div>
-
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
-						<small class="block">&copy; 2021. Все права защищены.</small> 
-						<small class="block">Designed by BARO <a href="" target="_blank"></a> 
-				</div>
-			</div>
-
-		</div>
-	</footer>
-	</div>
-
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-	</div>
 	
-	<!-- jQuery -->
-	<script src="{% static 'js/jquery.min.js' %}"></script> 
-	<!-- jQuery Easing -->
-	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script> 
-	<!-- Bootstrap -->
-	<script src="{% static 'js/bootstrap.min.js' %}"></script> 
-	<!-- Waypoints -->
-	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script> 
-	<!-- Carousel -->
-	<script src="{% static 'js/owl.carousel.min.js' %}"></script> 
-	<!-- countTo -->
-	<script src="{% static 'js/jquery.countTo.js' %}"></script> 
-	<!-- Flexslider -->
-	<script src="{% static 'js/jquery.flexslider-min.js' %}"></script> 
-	<!-- Main -->
-	<script src="{% static 'js/main.js' %}"></script>
-
-	</body>
-</html>
+{% endblock  %}
 

@@ -1,3 +1,6 @@
+from cProfile import label
+from xml.etree.ElementTree import Comment
+from xml.parsers.expat import model
 from django.db import models
 
 from shop.models import Product
@@ -5,14 +8,16 @@ from shop.models import Product
 
 
 class Order (models.Model):
-    first_name = models.CharField(max_length=60)
-    last_name = models.CharField(max_length=60)
+    first_name = models.CharField(max_length=60, verbose_name='Имя' )
+    last_name = models.CharField(max_length=60, verbose_name="Фамилия")
     email = models.EmailField()
-    address = models.CharField(max_length=150)
-    postal_code = models.CharField(max_length=30)
-    city = models.CharField(max_length=100)
+    address = models.CharField(max_length=150, verbose_name="Адрес")
+    postal_code = models.CharField(max_length=30,verbose_name="Индекс")
+    city = models.CharField(max_length=100, verbose_name="Город")
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    phone = models.CharField(max_length=20,verbose_name="Телефон")
+    comment = models.TextField(verbose_name="Комментарий к заказу", blank=True)
     paid = models.BooleanField(default=False)  # оплачен ли заказ
 
     class Meta:

@@ -31,7 +31,7 @@
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>BARO</h2>
-					<p>Какие модные сумки окажутся в центре внимания тенденций 2021 сезона? Мы знаем все о ключевых трендах.</p>
+					<p>Какие модные сумки окажутся в центре внимания тенденций сезона? Мы знаем все о ключевых трендах.</p>
 				</div>
 			</div>
 			{% for product in products %}
@@ -40,10 +40,10 @@
 					<div class="product">
 						<div class="product-grid" style="background-image: url({{ product.image.url }})">
 							<div class="inner">
-								<p>
+								<!-- <p>
 									<a href="{{ product.get_absolute_url }}" class="icon"><i class="icon-shopping-cart"></i></a>
 									<a href="{{ product.get_absolute_url }}" class="icon"><i class="icon-eye"></i></a>
-								</p>
+								</p> -->
 							</div>
 						</div>
 						<div class="desc">
@@ -77,9 +77,6 @@
 							</div>
 							<div class="item">
 								<div class="testimony-slide active text-center">
-									<figure>
-										<img src="{% static 'shop/images/person2.jpg' %}" alt="user">
-									</figure>
 									<span>Лариса Учуева <a href="#" class="twitter">Отзовик</a></span>
 									<blockquote>
 										<p>&ldquo; Сумка мягкая. Очень приятная на ощупь. За год почти ежедневного использования сумка не утратила свой вид. До сих пор выглядит, как новая. Ни одной потёртости. Подклад целый. Никаких намеков на дырочки)) Цвет не выгорел, по-прежнему черный. 
@@ -90,10 +87,7 @@
 							</div>
 							<div class="item">
 								<div class="testimony-slide active text-center">
-									<figure>
-										<img src="{% static 'shop/images/person3.jpg' %}" alt="user">
-									</figure>
-									<span>Балатова Елена <a href="#" class="twitter">La moda</a></span>
+									<span>Болатова Елена <a href="#" class="twitter">La moda</a></span>
 									<blockquote>
 										<p>&ldquo; Отличная сумочка!!! Очень вместительная. Внутри все аккуратно, подклад мягкий (не синтетика). Молнии на сумке металлические. Форму держит. Вообщем классная сумочка, рекомендую! Спасибо!&rdquo;</p>
 									</blockquote>
